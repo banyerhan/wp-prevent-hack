@@ -13,6 +13,11 @@ _Main Tips for Prevent hacking dDos...
      deny from all
      deny from xxx.xxx.xx.x
    </Files>
+    <files ~ "^.*\.([Hh][Tt][Aa])">
+      order allow,deny
+      deny from all
+      satisfy all
+    </files>
      
 5) Protect Your .htaccess File
   <Files .htaccess>
