@@ -24,6 +24,10 @@ _Main Tips for Prevent hacking dDos...
      order allow,deny
      deny from all
   </Files>
+  <Files xmlrpc.php>
+    order deny,allow
+    deny from all
+    </Files>
   Options -Indexes redirect t 403
 
 6) Hide Your WordPress Version
