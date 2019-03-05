@@ -11,6 +11,7 @@ _Main Tips for Prevent hacking dDos...
   <Files wp-config.php>
      order allow,deny
      deny from all
+     deny from xxx.xxx.xx.x
    </Files>
      
 5) Protect Your .htaccess File
@@ -18,7 +19,8 @@ _Main Tips for Prevent hacking dDos...
      order allow,deny
      deny from all
   </Files>
- 
+  Options -Indexes redirect t 403
+
 6) Hide Your WordPress Version
     remove_action('wp_head', 'wp_generator');
     remove_action('wp_head', 'rsd_link');
