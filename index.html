@@ -13,11 +13,11 @@ _Main Tips for Prevent hacking dDos...
      deny from all
      deny from xxx.xxx.xx.x
    </Files>
-    <files ~ "^.*\.([Hh][Tt][Aa])">
-      order allow,deny
-      deny from all
-      satisfy all
-    </files>
+  <files ~ "^.*\.([Hh][Tt][Aa])">
+    order allow,deny
+    deny from all
+    satisfy all
+  </files>
      
 5) Protect Your .htaccess File
   <Files .htaccess>
@@ -27,8 +27,7 @@ _Main Tips for Prevent hacking dDos...
   <Files xmlrpc.php>
     order deny,allow
     deny from all
-    </Files>
-  Options -Indexes redirect t 403
+   </Files>
 
 6) Hide Your WordPress Version
     remove_action('wp_head', 'wp_generator');
@@ -70,4 +69,15 @@ _Main Tips for Prevent hacking dDos...
   eg. bootstrap, cdn, google fonts.
 
 16) Don't install and activate unrequired. it may be jquery conflict.
+
+17) It is popular nowadays
+
+      # BEGIN block author scans
+      RewriteEngine On
+      RewriteBase /
+      RewriteCond %{QUERY_STRING} (author=\d+) [NC]
+      RewriteRule .* - [F]
+      # END block author scans
+
+      Options -Indexes (redirect t 403)
 
