@@ -79,5 +79,8 @@ _Main Tips for Prevent hacking dDos...
       RewriteRule .* - [F]
       # END block author scans
 
-      Options -Indexes (redirect t 403)
 
+18) robots.txt
+    User-agent: *
+    Disallow: /wp-admin/
+    Allow: /wp-admin/admin-ajax.php
